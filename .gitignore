@@ -1,1 +1,8 @@
+# virtual environment
 venv/
+
+# Setup commands
+SETUP.md
+
+# Distribution / packaging
+dist/
