@@ -7,8 +7,9 @@ pl.TEMPORAL_DTYPES
 
 class Naive(Model):
 
-    def __init__():
+    def __init__(self):
         pass 
+
 
     def fit(self, y: pl.DataFrame):
         """
@@ -19,9 +20,10 @@ class Naive(Model):
 
         """
 
-        self._y = y
+        self.y = y
         
     def predict(h: int):
+        
         
 
         pass
