@@ -6,3 +6,6 @@ SETUP.md
 
 # Distribution / packaging
 dist/
+
+# Testing files
+sandbox.ipynb

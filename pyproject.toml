@@ -9,11 +9,13 @@ readme = "README.md"
 python = "^3.10"
 pandas = "^2.1.0"
 numpy = "^1.25.2"
+polars = "^0.19.13"
 
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.2"
 twine = "^4.0.2"
+ipykernel = "^6.26.0"
 
 [build-system]
 requires = ["poetry-core"]
