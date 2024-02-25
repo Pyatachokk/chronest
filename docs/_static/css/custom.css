@@ -1,0 +1,9 @@
+.wy-nav-content {
+    max-width: 1200px;
+    /* Adjust content width */
+}
+
+.wy-nav-side {
+    background-color: #f0f0f0;
+    /* Sidebar background color */
+}
