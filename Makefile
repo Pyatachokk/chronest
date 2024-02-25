@@ -12,4 +12,6 @@ build:
 
 build_doc:
 	poetry run make -C docs html
-	cp -a docs/_build/html/. docs/
+	touch docs/_build/html/.nojekyll
+	cp docs/_build/html/.nojekyll docs/
+	cp -r docs/_build/html/* docs/
