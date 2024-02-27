@@ -1,4 +1,4 @@
-.PHONY: format lint build apidoc build_doc
+.PHONY: format lint build apidoc build_doc test
 
 format:
 	poetry run isort .
@@ -15,3 +15,6 @@ build_doc:
 	touch docs/_build/html/.nojekyll
 	cp docs/_build/html/.nojekyll docs/
 	cp -r docs/_build/html/* docs/
+
+test:
+	python -m pytest
