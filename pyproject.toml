@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "chronest"
-version = "0.1.1"
+version = "0.2.0"
 description = ""
 authors = ["Matvei Zekhov <zehov1@mail.ru>"]
 readme = "README.md"
