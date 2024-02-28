@@ -1,0 +1,17 @@
+:py:mod:`chronest.errors`
+=========================
+
+.. py:module:: chronest.errors
+
+
+Module Contents
+---------------
+
+.. py:exception:: DateError(*args)
+
+
+   Bases: :py:obj:`ValueError`
+
+   Raise when some dates are incorrect
+
+

@@ -10,6 +10,8 @@ Welcome to chronest's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   autoapi/index
+
 
 
 Indices and tables

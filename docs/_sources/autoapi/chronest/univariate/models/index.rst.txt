@@ -1,0 +1,16 @@
+:py:mod:`chronest.univariate.models`
+====================================
+
+.. py:module:: chronest.univariate.models
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   base/index.rst
+   naive/index.rst
+
+

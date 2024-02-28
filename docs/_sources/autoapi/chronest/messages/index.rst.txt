@@ -1,0 +1,19 @@
+:py:mod:`chronest.messages`
+===========================
+
+.. py:module:: chronest.messages
+
+
+Module Contents
+---------------
+
+.. py:data:: MODEL_NOT_INITIALIZED
+   :value: 'The model was not initialized properly.'
+
+   
+
+.. py:data:: MODEL_NOT_FITTED
+   :value: 'The model was not fitted properly.'
+
+   
+

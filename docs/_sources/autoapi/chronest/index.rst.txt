@@ -1,0 +1,25 @@
+:py:mod:`chronest`
+==================
+
+.. py:module:: chronest
+
+
+Subpackages
+-----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+
+   univariate/index.rst
+
+
+Submodules
+----------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 1
+
+   errors/index.rst
+   messages/index.rst
+
+

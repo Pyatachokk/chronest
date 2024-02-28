@@ -1,0 +1,38 @@
+:py:mod:`base`
+==============
+
+.. py:module:: base
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   base.BaseModel
+
+
+
+
+.. py:class:: BaseModel
+
+
+   Bases: :py:obj:`abc.ABC`
+
+   Base class for all univariate forecasting models
+
+   .. py:method:: is_initialized()
+
+      Check if model was initialized
+
+
+   .. py:method:: validate_y()
+
+      Validate regularity of data index.
+
+
+
+
