@@ -6,11 +6,9 @@ from chronest import errors, messages
 
 
 class BaseModel(ABC):
-
     """
-     Base class for all univariate forecasting models
+    Base class for all univariate forecasting models
     """
-
 
     def __init__(self) -> None:
         """
@@ -21,9 +19,8 @@ class BaseModel(ABC):
         self._origin: pd.Timestamp = None
 
     def is_initialized(self):
-
         """
-         Check if model was initialized
+        Check if model was initialized
         """
 
         assert (
@@ -31,9 +28,8 @@ class BaseModel(ABC):
         ), messages.MODEL_NOT_INITIALIZED
 
     def validate_y(self):
-
         """
-         Validate regularity of data index.
+        Validate regularity of data index.
 
         """
 

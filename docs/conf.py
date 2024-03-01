@@ -21,10 +21,10 @@ author = "Matvei Zekhov"
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx_rtd_theme",
-    'autoapi.extension',
+    "autoapi.extension",
 ]
 
-autoapi_dirs = ['../chronest']
+autoapi_dirs = ["../chronest"]
 
 templates_path = ["_templates"]
 exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]

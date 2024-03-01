@@ -1,7 +1,10 @@
 from itertools import cycle
+
 import pandas as pd
+
 from chronest import messages
 from chronest.univariate.base import BaseModel
+
 
 class Naive(BaseModel):
     """A naive forecasting model that simply repeats the last observed values.
@@ -48,11 +51,13 @@ class Naive(BaseModel):
         Args:
             y (pd.Series): The series of observed values.
         """
-        assert len(y) >= self._seasonal_period, "The data must be longer or equal to one seasonal period."
+        assert (
+            len(y) >= self._seasonal_period
+        ), "The data must be longer or equal to one seasonal period."
 
         self._y = y
         self._origin = self._y.index[-1]
-        self._y_tail = self._y[-self._seasonal_period:]
+        self._y_tail = self._y[-self._seasonal_period :]
 
         self.is_initialized()
         self.validate_y()
@@ -64,7 +69,9 @@ class Naive(BaseModel):
 
         """
         assert hasattr(self, "_y") and self._y is not None, messages.MODEL_NOT_FITTED
-        assert hasattr(self, "_origin") and self._origin is not None, messages.MODEL_NOT_FITTED
+        assert (
+            hasattr(self, "_origin") and self._origin is not None
+        ), messages.MODEL_NOT_FITTED
 
     def predict(self, horizon: int = 1) -> pd.Series:
         """Generates forecasts for the specified horizon.
@@ -81,7 +88,9 @@ class Naive(BaseModel):
         """
         self.__is_fitted()
 
-        forecast_index = pd.date_range(start=self._origin+self._delta, periods=horizon, freq=self._delta)
+        forecast_index = pd.date_range(
+            start=self._origin + self._delta, periods=horizon, freq=self._delta
+        )
         forecast_cycle = cycle(self._y_tail)
         forecast_values = [next(forecast_cycle) for _ in range(1, horizon + 1)]
 
