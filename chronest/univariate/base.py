@@ -10,13 +10,18 @@ class BaseModel(ABC):
     Base class for all univariate forecasting models
     """
 
-    def __init__(self) -> None:
+    def __init__(self, delta: pd.DateOffset) -> None:
         """
         Initialize base model class.
         """
+        self._delta: pd.DateOffset = delta
+
+        if type(delta) is not pd.DateOffset:
+            raise TypeError("Delta type is invalid. Should be pd.DateOffset.")
+
         self._y: pd.Series = None
-        self._delta: pd.DateOffset = None
         self._origin: pd.Timestamp = None
+        self._horizon: int = None
 
     def is_initialized(self):
         """
@@ -56,3 +61,11 @@ class BaseModel(ABC):
                 f"Deltas are not equal between several dates. \
                   Check one of following: {joined_wrong_dates}"
             )
+        
+    def validate_horizon(self):
+        if type(self._horizon) is not int:
+            raise TypeError("Horizon should be integer")
+        
+        if self._horizon <= 0:
+            raise ValueError("Horizon should be positive integer")
+

@@ -32,13 +32,9 @@ class Naive(BaseModel):
             seasonal_period (int): The number of periods to consider for the seasonality pattern.
 
         """
-        super().__init__()
+        super().__init__(delta=delta)
 
-        if type(delta) is not pd.DateOffset:
-            raise TypeError("Delta type is invalid.")
-        if type(seasonal_period) is not int:
-            raise TypeError("Seasonal period type is invalid.")
-
+     
         self._delta = delta
         self._seasonal_period = seasonal_period
 
@@ -86,6 +82,10 @@ class Naive(BaseModel):
             pd.Series: A series of forecasted values, indexed by the forecast dates.
 
         """
+
+        self._horizon = horizon
+        self.validate_horizon()
+        
         self.__is_fitted()
 
         forecast_index = pd.date_range(
