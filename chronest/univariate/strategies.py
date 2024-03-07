@@ -65,6 +65,7 @@ class DirectStrategy(BaseStrategy):
         X: pd.DataFrame,
         target_column: str,
         feature_subsets: dict[int, list[str]] = None,
+        dir_rec: bool = False
     ) -> None:
         """
         Fit the strategy using the provided dataset.
@@ -72,13 +73,23 @@ class DirectStrategy(BaseStrategy):
         Parameters
         ----------
         X : pd.DataFrame
-            The input features dataset.
+            The input features dataset. The data should be prepared without one-step shift.
         target_column : str
             The name of the target column in the dataset.
         feature_subsets : dict[int, list[str]], optional
             A dictionary where keys are horizons and values are lists of column names
             indicating the subset of features to be used for the forecast at that horizon.
             All features except target_column are used for all horizons by default.
+        dir_rec : bool, optional
+            If True, for each horizon in the training set will be added forecasts of 
+            all previous models as features. :math:`x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a}`.
+
+            Inline math example: :math:`e^{i\\pi} + 1 = 0`
+
+            Block math example:
+
+            .. math::
+                \\int_{-\\infty}^{\\infty} e^{-x^2} dx = \\sqrt{\\pi}
         """
         if feature_subsets is None:
             feature_subsets = {}
@@ -127,6 +138,7 @@ class DirectStrategy(BaseStrategy):
             # Subsetting if there is a certain set for horizon
             if h in feature_subsets:
                 X_h = X_h.loc[:, feature_subsets[h]]
+
 
             # Copying base estimator
             estimator_h = deepcopy(self._estimator)

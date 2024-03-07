@@ -157,12 +157,12 @@
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="chronest.univariate.strategies.DirectStrategy.fit">
-<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_subsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#chronest.univariate.strategies.DirectStrategy.fit" title="Link to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_subsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_rec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#chronest.univariate.strategies.DirectStrategy.fit" title="Link to this definition"></a></dt>
 <dd><p>Fit the strategy using the provided dataset.</p>
 <section id="id3">
 <h5>Parameters<a class="headerlink" href="#id3" title="Link to this heading"></a></h5>
-<dl class="simple">
-<dt>X<span class="classifier">pd.DataFrame</span></dt><dd><p>The input features dataset.</p>
+<dl>
+<dt>X<span class="classifier">pd.DataFrame</span></dt><dd><p>The input features dataset. The data should be prepared without one-step shift.</p>
 </dd>
 <dt>target_column<span class="classifier">str</span></dt><dd><p>The name of the target column in the dataset.</p>
 </dd>
@@ -170,6 +170,13 @@
 indicating the subset of features to be used for the forecast at that horizon.
 All features except target_column are used for all horizons by default.</p>
 </dd>
+<dt>dir_rec<span class="classifier">bool, optional</span></dt><dd><p>If True, for each horizon in the training set will be added forecasts of
+all previous models as features. <img class="math" src="../../../../_images/math/0a888201776ad59fc9a1a7db1d5aa0f786c0e9c6.svg" alt="x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"/>.</p>
+<p>Inline math example: <img class="math" src="../../../../_images/math/866e9aa31a95678e98bf9ae26faf35deb94e609d.svg" alt="e^{i\pi} + 1 = 0"/></p>
+<p>Block math example:</p>
+<div class="math">
+<p><img src="../../../../_images/math/12adc041f11c0b1fbf0fe00804f2a06e5bb73f81.svg" alt="\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}"/></p>
+</div></dd>
 </dl>
 </section>
 </dd></dl>
