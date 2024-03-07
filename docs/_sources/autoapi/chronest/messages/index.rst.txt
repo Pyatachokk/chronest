@@ -17,3 +17,13 @@ Module Contents
 
    
 
+.. py:data:: STRATEGY_NOT_INITIALIZED
+   :value: 'The strategy was not initialized properly.'
+
+   
+
+.. py:data:: STRATEGY_NOT_FITTED
+   :value: 'The strategy was not fitted properly.'
+
+   
+

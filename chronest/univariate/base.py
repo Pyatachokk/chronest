@@ -61,11 +61,10 @@ class BaseModel(ABC):
                 f"Deltas are not equal between several dates. \
                   Check one of following: {joined_wrong_dates}"
             )
-        
+
     def validate_horizon(self):
         if type(self._horizon) is not int:
             raise TypeError("Horizon should be integer")
-        
+
         if self._horizon <= 0:
             raise ValueError("Horizon should be positive integer")
-

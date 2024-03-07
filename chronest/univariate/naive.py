@@ -34,7 +34,6 @@ class Naive(BaseModel):
         """
         super().__init__(delta=delta)
 
-     
         self._delta = delta
         self._seasonal_period = seasonal_period
 
@@ -85,7 +84,7 @@ class Naive(BaseModel):
 
         self._horizon = horizon
         self.validate_horizon()
-        
+
         self.__is_fitted()
 
         forecast_index = pd.date_range(
