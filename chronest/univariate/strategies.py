@@ -3,8 +3,10 @@ from typing import Any
 
 import pandas as pd
 
-from chronest import messages
+from chronest import messages, errors
 from chronest.univariate.base import BaseModel
+
+MIN_SAMPLES_VALID = 2
 
 
 class BaseStrategy(BaseModel):
@@ -96,8 +98,16 @@ class DirectStrategy(BaseStrategy):
 
         self.is_initialized()
 
+        if type(X) is not pd.DataFrame: 
+            raise TypeError("X should be data frame")
+        
+        if X.isna().any(axis=None):
+            raise ValueError("Missing values are not allowed")
+
         if target_column not in X.columns:
             raise ValueError("Target column is not in columns of X")
+        
+       
 
         X.sort_index(inplace=True)
 
@@ -127,6 +137,12 @@ class DirectStrategy(BaseStrategy):
 
         self._feature_subsets = feature_subsets
 
+        if len(self._X) <= self._horizon + MIN_SAMPLES_VALID:
+            raise errors.DataError(
+                f"Not enough samples for estimation. \
+                Should be at greater than horizon + {MIN_SAMPLES_VALID}"
+                )
+
         # Fitting of the models
         self._fitted_estimators = []
         for h in range(1, self._horizon + 1):
@@ -135,10 +151,10 @@ class DirectStrategy(BaseStrategy):
             y_h = self._y.copy().iloc[h:]
             X_h = self._X.iloc[:-h]
 
+
             # Subsetting if there is a certain set for horizon
             if h in feature_subsets:
                 X_h = X_h.loc[:, feature_subsets[h]]
-
 
             # Copying base estimator
             estimator_h = deepcopy(self._estimator)
@@ -150,7 +166,7 @@ class DirectStrategy(BaseStrategy):
         """
         Private method to check if the strategy and all its models are fitted.
         """
-        assert self._fitted_estimators, messages.STRATEGY_NOT_INITIALIZED
+        assert hasattr(self, "_fitted_estimators") and self._fitted_estimators, messages.STRATEGY_NOT_INITIALIZED
         assert self._y is not None, messages.STRATEGY_NOT_INITIALIZED
         assert self._X is not None, messages.STRATEGY_NOT_INITIALIZED
         assert self._origin is not None, messages.STRATEGY_NOT_INITIALIZED
