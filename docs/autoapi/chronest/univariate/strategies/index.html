@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>chronest.univariate.strategies &mdash; chronest  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/graphviz.css?v=eafc0fe6" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/custom.css?v=b3538a65" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+        <script src="../../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="chronest.errors" href="../../errors/index.html" />
+    <link rel="prev" title="chronest.univariate.naive" href="../naive/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            chronest
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chronest</span></code></a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../../index.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chronest.univariate</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../index.html#submodules">Submodules</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">chronest</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chronest</span></code></a></li>
+          <li class="breadcrumb-item"><a href="../index.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chronest.univariate</span></code></a></li>
+      <li class="breadcrumb-item active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chronest.univariate.strategies</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../../_sources/autoapi/chronest/univariate/strategies/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-chronest.univariate.strategies">
+<span id="chronest-univariate-strategies"></span><h1><a class="reference internal" href="#module-chronest.univariate.strategies" title="chronest.univariate.strategies"><code class="xref py py-mod docutils literal notranslate"><span class="pre">chronest.univariate.strategies</span></code></a><a class="headerlink" href="#module-chronest.univariate.strategies" title="Link to this heading"></a></h1>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<section id="classes">
+<h3>Classes<a class="headerlink" href="#classes" title="Link to this heading"></a></h3>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#chronest.univariate.strategies.BaseStrategy" title="chronest.univariate.strategies.BaseStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseStrategy</span></code></a></p></td>
+<td><p>Base class for implementing forecasting strategies for cross-sectional estimators.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#chronest.univariate.strategies.DirectStrategy" title="chronest.univariate.strategies.DirectStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DirectStrategy</span></code></a></p></td>
+<td><p>Strategy that involves direct forecasting at each horizon with a separate model.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="py class">
+<dt class="sig sig-object py" id="chronest.univariate.strategies.BaseStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chronest.univariate.strategies.</span></span><span class="sig-name descname"><span class="pre">BaseStrategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">delta</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chronest.univariate.strategies.BaseStrategy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="../base/index.html#chronest.univariate.base.BaseModel" title="chronest.univariate.base.BaseModel"><code class="xref py py-obj docutils literal notranslate"><span class="pre">chronest.univariate.base.BaseModel</span></code></a></p>
+<p>Base class for implementing forecasting strategies for cross-sectional estimators.</p>
+<section id="parameters">
+<h4>Parameters<a class="headerlink" href="#parameters" title="Link to this heading"></a></h4>
+<dl class="simple">
+<dt>delta<span class="classifier">pd.DateOffset</span></dt><dd><p>The time step between consecutive time points.</p>
+</dd>
+</dl>
+</section>
+<section id="attributes">
+<h4>Attributes<a class="headerlink" href="#attributes" title="Link to this heading"></a></h4>
+<dl class="simple">
+<dt>_estimator<span class="classifier">Any</span></dt><dd><p>Placeholder for the forecasting model.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="chronest.univariate.strategies.BaseStrategy.is_initialized">
+<span class="sig-name descname"><span class="pre">is_initialized</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#chronest.univariate.strategies.BaseStrategy.is_initialized" title="Link to this definition"></a></dt>
+<dd><p>Check if the strategy and its components are properly initialized.</p>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="chronest.univariate.strategies.DirectStrategy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">chronest.univariate.strategies.</span></span><span class="sig-name descname"><span class="pre">DirectStrategy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">estimator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">horizon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DateOffset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#chronest.univariate.strategies.DirectStrategy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#chronest.univariate.strategies.BaseStrategy" title="chronest.univariate.strategies.BaseStrategy"><code class="xref py py-obj docutils literal notranslate"><span class="pre">BaseStrategy</span></code></a></p>
+<p>Strategy that involves direct forecasting at each horizon with a separate model.</p>
+<section id="id1">
+<h4>Parameters<a class="headerlink" href="#id1" title="Link to this heading"></a></h4>
+<dl class="simple">
+<dt>estimator<span class="classifier">Any</span></dt><dd><p>The machine learning model or statistical method used for forecasting.</p>
+</dd>
+<dt>horizon<span class="classifier">int</span></dt><dd><p>The forecast horizon.</p>
+</dd>
+<dt>delta<span class="classifier">pd.DateOffset</span></dt><dd><p>The time step between consecutive forecasts.</p>
+</dd>
+</dl>
+</section>
+<section id="id2">
+<h4>Attributes<a class="headerlink" href="#id2" title="Link to this heading"></a></h4>
+<dl class="simple">
+<dt>_horizon<span class="classifier">int</span></dt><dd><p>The forecast horizon.</p>
+</dd>
+<dt>_estimator<span class="classifier">Any</span></dt><dd><p>The forecasting model.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="chronest.univariate.strategies.DirectStrategy.fit">
+<span class="sig-name descname"><span class="pre">fit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">pandas.DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">feature_subsets</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_rec</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#chronest.univariate.strategies.DirectStrategy.fit" title="Link to this definition"></a></dt>
+<dd><p>Fit the strategy using the provided dataset.</p>
+<section id="id3">
+<h5>Parameters<a class="headerlink" href="#id3" title="Link to this heading"></a></h5>
+<dl>
+<dt>X<span class="classifier">pd.DataFrame</span></dt><dd><p>The input features dataset. The data should be prepared without one-step shift.</p>
+</dd>
+<dt>target_column<span class="classifier">str</span></dt><dd><p>The name of the target column in the dataset.</p>
+</dd>
+<dt>feature_subsets<span class="classifier">dict[int, list[str]], optional</span></dt><dd><p>A dictionary where keys are horizons and values are lists of column names
+indicating the subset of features to be used for the forecast at that horizon.
+All features except target_column are used for all horizons by default.</p>
+</dd>
+<dt>dir_rec<span class="classifier">bool, optional</span></dt><dd><p>If True, for each horizon in the training set will be added forecasts of
+all previous models as features. <img class="math" src="../../../../_images/math/0a888201776ad59fc9a1a7db1d5aa0f786c0e9c6.svg" alt="x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"/>.</p>
+<p>Inline math example: <img class="math" src="../../../../_images/math/866e9aa31a95678e98bf9ae26faf35deb94e609d.svg" alt="e^{i\pi} + 1 = 0"/></p>
+<p>Block math example:</p>
+<div class="math">
+<p><img src="../../../../_images/math/12adc041f11c0b1fbf0fe00804f2a06e5bb73f81.svg" alt="\int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}"/></p>
+</div></dd>
+</dl>
+</section>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chronest.univariate.strategies.DirectStrategy.__is_fitted">
+<span class="sig-name descname"><span class="pre">__is_fitted</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#chronest.univariate.strategies.DirectStrategy.__is_fitted" title="Link to this definition"></a></dt>
+<dd><p>Private method to check if the strategy and all its models are fitted.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="chronest.univariate.strategies.DirectStrategy.predict">
+<span class="sig-name descname"><span class="pre">predict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">pandas.Series</span></span></span><a class="headerlink" href="#chronest.univariate.strategies.DirectStrategy.predict" title="Link to this definition"></a></dt>
+<dd><p>Generate forecasts using the fitted models.</p>
+<section id="returns">
+<h5>Returns<a class="headerlink" href="#returns" title="Link to this heading"></a></h5>
+<dl class="simple">
+<dt>pd.Series</dt><dd><p>A time series of the forecasted values indexed by the forecast horizon dates.</p>
+</dd>
+</dl>
+</section>
+</dd></dl>
+
+</section>
+</dd></dl>
+
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../naive/index.html" class="btn btn-neutral float-left" title="chronest.univariate.naive" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../errors/index.html" class="btn btn-neutral float-right" title="chronest.errors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Matvei Zekhov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

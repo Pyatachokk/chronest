@@ -1,0 +1,108 @@
+:py:mod:`chronest.univariate.strategies`
+========================================
+
+.. py:module:: chronest.univariate.strategies
+
+
+Module Contents
+---------------
+
+Classes
+~~~~~~~
+
+.. autoapisummary::
+
+   chronest.univariate.strategies.BaseStrategy
+   chronest.univariate.strategies.DirectStrategy
+
+
+
+
+.. py:class:: BaseStrategy(delta)
+
+
+   Bases: :py:obj:`chronest.univariate.base.BaseModel`
+
+   Base class for implementing forecasting strategies for cross-sectional estimators.
+
+   Parameters
+   ----------
+   delta : pd.DateOffset
+       The time step between consecutive time points.
+
+   Attributes
+   ----------
+   _estimator : Any
+       Placeholder for the forecasting model.
+
+   .. py:method:: is_initialized() -> None
+
+      Check if the strategy and its components are properly initialized.
+
+
+
+.. py:class:: DirectStrategy(estimator: Any, horizon: int, delta: pandas.DateOffset)
+
+
+   Bases: :py:obj:`BaseStrategy`
+
+   Strategy that involves direct forecasting at each horizon with a separate model.
+
+   Parameters
+   ----------
+   estimator : Any
+       The machine learning model or statistical method used for forecasting.
+   horizon : int
+       The forecast horizon.
+   delta : pd.DateOffset
+       The time step between consecutive forecasts.
+
+   Attributes
+   ----------
+   _horizon : int
+       The forecast horizon.
+   _estimator : Any
+       The forecasting model.
+
+   .. py:method:: fit(X: pandas.DataFrame, target_column: str, feature_subsets: dict[int, list[str]] = None, dir_rec: bool = False) -> None
+
+      Fit the strategy using the provided dataset.
+
+      Parameters
+      ----------
+      X : pd.DataFrame
+          The input features dataset. The data should be prepared without one-step shift.
+      target_column : str
+          The name of the target column in the dataset.
+      feature_subsets : dict[int, list[str]], optional
+          A dictionary where keys are horizons and values are lists of column names
+          indicating the subset of features to be used for the forecast at that horizon.
+          All features except target_column are used for all horizons by default.
+      dir_rec : bool, optional
+          If True, for each horizon in the training set will be added forecasts of 
+          all previous models as features. :math:`x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}`.
+
+          Inline math example: :math:`e^{i\pi} + 1 = 0`
+
+          Block math example:
+
+          .. math::
+              \int_{-\infty}^{\infty} e^{-x^2} dx = \sqrt{\pi}
+
+
+   .. py:method:: __is_fitted() -> None
+
+      Private method to check if the strategy and all its models are fitted.
+
+
+   .. py:method:: predict() -> pandas.Series
+
+      Generate forecasts using the fitted models.
+
+      Returns
+      -------
+      pd.Series
+          A time series of the forecasted values indexed by the forecast horizon dates.
+
+
+

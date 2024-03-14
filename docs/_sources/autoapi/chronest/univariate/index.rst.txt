@@ -12,5 +12,6 @@ Submodules
 
    base/index.rst
    naive/index.rst
+   strategies/index.rst
 
 
