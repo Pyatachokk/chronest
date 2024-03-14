@@ -31,4 +31,4 @@ jobs:
         fail_ci_if_error: true  # Optional: Specify if CI should fail when Codecov encounters an error
 
       env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
