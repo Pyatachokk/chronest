@@ -1,0 +1,35 @@
+name: Python Codecov
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.10'  # Use the Python version appropriate for your project
+
+    - name: Install dependencies
+      run: |
+        pip install poetry
+        poetry config virtualenvs.create false
+        poetry install
+
+    - name: Run pytest with coverage
+      run: poetry run pytest --cov=my_project tests/  # Replace my_project with your package name
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
+        files: ./coverage.xml  # Ensure this path matches the output of your coverage report
+        fail_ci_if_error: true  # Optional: Specify if CI should fail when Codecov encounters an error
