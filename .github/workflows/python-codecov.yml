@@ -26,7 +26,9 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v4.0.1
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}
         slug: Pyatachokk/chronest
         files: ./coverage.xml  # Ensure this path matches the output of your coverage report
         fail_ci_if_error: true  # Optional: Specify if CI should fail when Codecov encounters an error
+
+      env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
