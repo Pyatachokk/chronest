@@ -22,7 +22,13 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx_rtd_theme",
     "autoapi.extension",
+    # "sphinx.ext.mathjax",
+    "sphinx.ext.imgmath"
 ]
+
+imgmath_latex = 'latex'
+# To change the image format (png or svg), use:
+imgmath_image_format = 'svg'  
 
 autoapi_dirs = ["../chronest"]
 

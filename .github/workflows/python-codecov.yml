@@ -1,0 +1,34 @@
+name: Python Codecov
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'  # Use the Python version appropriate for your project
+
+    - name: Install dependencies
+      run: |
+        pip install poetry
+        poetry config virtualenvs.create false
+        poetry install
+
+    - name: Run pytest with coverage
+      run: poetry run pytest --cov=chronest tests/  # Replace my_project with your package name
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        slug: Pyatachokk/chronest
+        files: ./coverage.xml  # Ensure this path matches the output of your coverage report
+        fail_ci_if_error: true  # Optional: Specify if CI should fail when Codecov encounters an error
+
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
