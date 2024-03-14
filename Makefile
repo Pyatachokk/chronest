@@ -19,6 +19,9 @@ build_doc:
 test:
 	python -m pytest
 
+test-cov:
+	python -m pytest --cov=chronest --cov-report=xml
+
 publish_test:
 	poetry build
 	poetry publish --repository testpypi
