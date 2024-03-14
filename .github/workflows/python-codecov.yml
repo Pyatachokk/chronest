@@ -24,7 +24,7 @@ jobs:
       run: poetry run pytest --cov=my_project tests/  # Replace my_project with your package name
 
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v4
       with:
         files: ./coverage.xml  # Ensure this path matches the output of your coverage report
         fail_ci_if_error: true  # Optional: Specify if CI should fail when Codecov encounters an error
