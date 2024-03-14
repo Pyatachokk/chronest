@@ -2,9 +2,10 @@ name: Python Codecov
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - '*'
   pull_request:
-    branches: [ main ]
+    - '*'
 
 jobs:
   build:
@@ -30,6 +31,5 @@ jobs:
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v2
       with:
-        token: ${{ secrets.CODECOV_TOKEN }}  # Not required for public repos
         files: ./coverage.xml  # Ensure this path matches the output of your coverage report
         fail_ci_if_error: true  # Optional: Specify if CI should fail when Codecov encounters an error
