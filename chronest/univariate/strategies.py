@@ -67,6 +67,7 @@ class DirectStrategy(BaseStrategy):
         X: pd.DataFrame,
         target_column: str,
         feature_subsets: dict[int, list[str]] = None,
+        stable_features: list[str] | None = None,
         dir_rec: bool = False
     ) -> None:
         """
@@ -95,6 +96,11 @@ class DirectStrategy(BaseStrategy):
         """
         if feature_subsets is None:
             feature_subsets = {}
+
+        if stable_features is None:
+            stable_features = []
+
+        
 
         self.is_initialized()
 
@@ -143,13 +149,23 @@ class DirectStrategy(BaseStrategy):
                 Should be at greater than horizon + {MIN_SAMPLES_VALID}"
                 )
 
+        shifting_features = self._X.columns.difference(stable_features)
         # Fitting of the models
         self._fitted_estimators = []
         for h in range(1, self._horizon + 1):
 
             # Shifting data to create training dataset
-            y_h = self._y.copy().iloc[h:]
-            X_h = self._X.iloc[:-h]
+            y_h = self._y.copy()
+            y_h.index = y_h.index - self._delta * (h-1)
+
+            X_h_stable = self._X.loc[:, stable_features]
+            X_h_stable.index = X_h_stable.index - self._delta * (h-1)
+
+            X_h_shifting = self._X.loc[:, shifting_features]
+            data_h = pd.concat([y_h, X_h_shifting, X_h_stable], axis=1).dropna()
+
+            y_h = data_h[target_column]
+            X_h = data_h.drop(columns=target_column)
 
 
             # Subsetting if there is a certain set for horizon
