@@ -66,3 +66,4 @@ def test_predict_without_fitting():
     model = Naive(delta=pd.DateOffset(days=1), seasonal_period=1)
     with pytest.raises(AssertionError):
         model.predict(horizon=1)
+ 

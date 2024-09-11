@@ -18,7 +18,7 @@ class BaseModel(ABC):
 
         if type(delta) is not pd.DateOffset:
             raise TypeError("Delta type is invalid. Should be pd.DateOffset.")
-
+ 
         self._y: pd.Series = None
         self._origin: pd.Timestamp = None
         self._horizon: int = None

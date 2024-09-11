@@ -30,7 +30,7 @@ def estimator():
         def predict(self, X):
             return [42]  # Arbitrary prediction
     return MockEstimator()
-
+ 
 # Test initialization and parameter validation
 def test_initialization(delta, estimator):
     strategy = DirectStrategy(estimator=estimator, horizon=3, delta=delta)

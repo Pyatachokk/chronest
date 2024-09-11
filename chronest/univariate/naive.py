@@ -23,7 +23,7 @@ class Naive(BaseModel):
 
         _y_tail (pd.Series): The tail of the series, containing the last `seasonal_period` observations.
     """
-
+ 
     def __init__(self, delta: pd.DateOffset, seasonal_period: int = 1):
         """Initializes the Naive forecasting model.
 

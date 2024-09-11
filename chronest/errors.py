@@ -8,4 +8,4 @@ class DataError(ValueError):
     """Raise when incoming data has incorrect properties"""
 
     def __init__(self, *args):
-        super().__init__(*args)
+        super().__init__(*args) 

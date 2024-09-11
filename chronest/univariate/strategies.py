@@ -142,7 +142,7 @@ class DirectStrategy(BaseStrategy):
                 f"Not enough samples for estimation. \
                 Should be at greater than horizon + {MIN_SAMPLES_VALID}"
                 )
-
+ 
         # Fitting of the models
         self._fitted_estimators = []
         for h in range(1, self._horizon + 1):
